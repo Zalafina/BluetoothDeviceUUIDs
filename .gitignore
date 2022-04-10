@@ -1,0 +1,14 @@
+# Qt generate file types
+
+build-*/*
+build-*
+*-build-*
+bluetooth_uuid/*.pro.user
+bluetooth_uuid/*.pro.user.*
+bluetooth_uuid/*.moc
+bluetooth_uuid/*.bin
+bluetooth_uuid/moc_*.cpp
+bluetooth_uuid/qrc_*.cpp
+bluetooth_uuid/ui_*.h
+bluetooth_uuid/Makefile*
+bluetooth_uuid/*-build-*
