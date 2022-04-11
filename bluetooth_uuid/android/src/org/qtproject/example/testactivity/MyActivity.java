@@ -181,6 +181,7 @@ public class MyActivity extends org.qtproject.qt5.android.bindings.QtActivity
                         if (mFetchingFoundDeviceUUIDs == false){
                             mFetchingFoundDeviceUUIDs = true;
                             Log.i(TAG, "Fetching found devices UUIDs start.");
+                            Log.i(TAG, "mScanFoundDeviceList size[" + mScanFoundDeviceList.size() + "]");
                         }
                         else {
                             Log.e(TAG, "mFetchingFoundDeviceUUIDs is true, status error!");
@@ -276,6 +277,17 @@ public class MyActivity extends org.qtproject.qt5.android.bindings.QtActivity
 
     private static void collectFoundDevices(BluetoothDevice device)
     {
+        Log.i(TAG, "collectFoundDevices()");
+
+        if (device == null){
+            Log.e(TAG, "collectFoundDevices() -> device is null");
+            return;
+        }
+
+        if (mScanFoundDeviceList.contains(device) == false) {
+            mScanFoundDeviceList.add(device);
+            Log.i(TAG, "mScanFoundDeviceList size[" + mScanFoundDeviceList.size() + "]");
+        }
     }
 
     private static void updateSpecialDevice(BluetoothDevice device)
